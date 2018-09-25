@@ -20,14 +20,28 @@ ADVANCED TRACK: 14-20
 
 
 // 1. Create a function called returnMe object that describes you with your name, city, and jobTitle.
+function returnMe() {
+  var theObject = { name: "Rey",
+                city: "San Francisco",
+                jobTitle: "Student"
+  }
+  return theObject;
+} 
+//console.log(returnMe());
 
-
-// 2. Create a function called returnMe2 that will the return the same object (not the function itself), with a key of "family" with the value being an array of three of your family members.
+// 2. Create a function called returnMe2 that will the return the same object (not the function itself), 
+// with a key of "family" with the value being an array of three of your family members.
 // Example of desired output: { name: 'Bob Smith',
 //                              city: 'Denver',
 //                              jobTitle: 'professional wrestler',
 //                              family: ['Joan', 'Kyle', 'Hank'] }
-
+function returnMe2 () {
+  let theObject = { name: "Rey",
+                city: "San Francisco",
+                jobTitle: "Student",
+                family: ["Marsha", "Jan", "Cindy"]}
+  return theObject;
+}
 
 /*************************************************************************************
 *
@@ -36,7 +50,8 @@ ADVANCED TRACK: 14-20
 ***************************************************************************************/
 
 // Use the following Object for questions 3-8:
-var invitees = { adults: [{
+var invitees = { 
+adults: [{
   name: "Penny",
   table: 10,
   dinnerChoice: ["salad", "beef", "ice cream"]
@@ -69,32 +84,68 @@ allergies: ["boys"]
 }
 ]
 };
-
-
 // 3. Create a function called pdChoice that will return Penny's dinner choice (this will be the second item in his dinnerChoice array)
-
+function pdChoice() {
+  return invitees["adults"][0]["dinnerChoice"][1];
+}
 
 // 4. Create a function called ptNum that will return Pablo's table number.
-
+function ptNum() {
+  return invitees["children"][1]["table"];
+}
 
 // 5. Create a function called lssc that will return Lauren's seating specialConsiderations.
-
+function lssc() {
+  return invitees["adults"][2]["specialConsiderations"];
+}
 
 // 6. Create a function called bdChoice that will return Billy's dessert choice (this will be the third item in his dinnerChoice array)
-
+function bdChoice() {
+  return invitees["adults"][1]["dinnerChoice"][2];
+}
 
 // 7. Create a function called aAllergies that will return Ada's allergies.
+function aAllergies() {
+  return invitees["children"][2]["allergies"];
+}
 
-
-// 8. Create a function called fullDinnerChoice that will return a patron's dinner choice in a sentence. This function requires a single parameter and will expect that the dinnerChoice array will be passed in when it is invoked.
+// 8. Create a function called fullDinnerChoice that will return a patron's dinner choice in a sentence. 
+// This function requires a single parameter and will expect that the dinnerChoice array will be passed in when it is invoked.
 // Desired result: "That diner's appetizer is _______. She will be eating ______ for dinner
 // and has selected ________ as her dessert."
-
+function fullDinnerChoice(arr) {
+  return `That diner's appetizer is ${arr[0]}. She will be eating ${arr[1]} for dinner and has selected ${arr[2]} as her dessert.`;
+}
 
 // 9. Create an empty object called "jsWorkshop" using Constructor Notation.
 
+// Objects are collections of named values, and they are created using a special function called a constructor.
+// There are several such functions supplied with JavaScript. 
+// There is a generic one, Object(), but there are also specific ones to create objects of a predefined structure, 
+// such as Date() or String().
+// The syntax is as follows:  
+//   employee = new Object();
+// Now we have created an empty object called employee that we can fill up with names and values, as shown below:
+//  employee.firstName = "John";
+//  employee.lastName = "Williams";
+//  employee.profession = "conductor";
+// The following is an example of a String method:
+//  hello = new String("Hello, World"); // Or simply hello = "Hello, World";
+//  Hello = hello.toUpperCase();
+//  alert (Hello); // This will show HELLO, WORLD in a pop-up box
+
+ jsWorkshop = new Object(); // creating object using constructor notation
+// jsWorkshop = {}; JSON - This is another way to create objects, without the need of a constructor function.
+// FROM PRACTICAL WEB DEVELOPMENT:
+//jsWorkshop = new Object();
+
 
 // 10. To your "jsWorkshop" object, assign a key of "classmates" with the value being an array of five your classmates.
+//jsWorkshop["classmates"] = ["Xayaseth","Johnny","Ryan","Freddy","Duncan"];
+// jsWorkshop = new Object();
+//jsWorkshop["classmates"] = ["Xayaseth","Johnny","Ryan","Freddy","Duncan"];
+
+jsWorkshop.classmates = ["Xayaseth", "Johnny","Ryan","Freddy","Duncan"];
 
 
 // 11. Get the length of the fourth classmate's name.
